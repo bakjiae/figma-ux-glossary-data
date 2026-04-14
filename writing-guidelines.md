@@ -76,9 +76,10 @@
 ### 공통(필수)
 
 - 아래 타입을 **반드시 구분**해서 작성한다: 버튼, 라벨, 타이틀, 설명 문구, 마케팅 문구.
-- 영문 UI 문구(버튼/라벨/타이틀/설명)는 **Sentence case만 허용**한다.  
+- **Sentence case 적용 가능 언어**(예: en, de, es, fr, it, id, vi)의 UI 문구(특히 버튼/타이틀)는 **Sentence case만 허용**한다.
   - ✅ `Button title` / `Start lesson now`
   - 🚫 `Button Title` / `Start Lesson Now` (Title Case 금지)
+- **대소문자 개념이 약하거나 없는 언어**(예: ko, ja, zh-Hant, th)는 해당 로케일의 일반 UI 표기 관례를 일관되게 따른다.
 - 브랜드명·고유명사·약어(예: `AI`, `Korean`, `iOS`)만 예외적으로 대문자를 유지한다.
 
 ### 버튼
@@ -93,6 +94,7 @@
   - 이 원칙은 다른 언어에도 동일하게 적용한다. 각 로케일에서 `확정` 의미와 `단순 인지` 의미를 구분되는 버튼어로 매핑한다.
 - 영문 버튼은 **동사로 시작하는 행동형**으로 쓴다.  
   ✅ `Book lesson` / `Start lesson now` | 🚫 `Booking` / `Lesson start`
+- Sentence case 적용 가능 언어의 버튼도 동일하게 Sentence case를 따른다.
 
 ### 라벨
 
@@ -104,6 +106,7 @@
 - 화면·섹션 타이틀은 **무엇에 관한 화면인지**를 명사 중심으로 표현한다.
 - 타이틀도 Sentence case를 따른다(Title Case 금지).  
   ✅ `Lesson history` | 🚫 `Lesson History`
+- Sentence case 적용 가능 언어의 타이틀도 동일하게 Sentence case를 따른다.
 
 ### 설명 문구
 
