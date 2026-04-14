@@ -75,6 +75,7 @@
 
 ### 공통(필수)
 
+- **우선순위:** 아래 규칙은 권장사항이 아니라 **강제 규칙(MUST)** 이다. 다른 문장과 충돌하면 이 섹션 규칙을 우선 적용한다.
 - 아래 타입을 **반드시 구분**해서 작성한다: 버튼, 라벨, 타이틀, 설명 문구, 마케팅 문구.
 - **Sentence case 적용 가능 언어**(예: en, de, es, fr, it, id, vi)의 UI 문구(특히 버튼/타이틀)는 **Sentence case만 허용**한다.
   - ✅ `Button title` / `Start lesson now`
@@ -95,6 +96,10 @@
 - 영문 버튼은 **동사로 시작하는 행동형**으로 쓴다.  
   ✅ `Book lesson` / `Start lesson now` | 🚫 `Booking` / `Lesson start`
 - Sentence case 적용 가능 언어의 버튼도 동일하게 Sentence case를 따른다.
+- 버튼 생성/번역 시 마지막 단계를 아래처럼 강제한다:
+  1) 버튼인지 판별한다.  
+  2) Sentence case 적용 가능 언어면 Title Case 여부를 검사한다.  
+  3) Title Case이면 Sentence case로 반드시 수정한다.
 
 ### 라벨
 
@@ -107,6 +112,10 @@
 - 타이틀도 Sentence case를 따른다(Title Case 금지).  
   ✅ `Lesson history` | 🚫 `Lesson History`
 - Sentence case 적용 가능 언어의 타이틀도 동일하게 Sentence case를 따른다.
+- 타이틀 생성/번역 시 마지막 단계를 아래처럼 강제한다:
+  1) 타이틀인지 판별한다.  
+  2) Sentence case 적용 가능 언어면 Title Case 여부를 검사한다.  
+  3) Title Case이면 Sentence case로 반드시 수정한다.
 
 ### 설명 문구
 
@@ -160,6 +169,15 @@
 
 - 한국어 **수업**에 대응하는 **영어** 표기는 용어집 `en`(`Lesson` 등)을 따른다. **Class**, **session**, **course**로 바꾸지 않는다(다른 뜻의 *class*는 문맥상 필요할 때만).
 - 🚫 Book a class | ✅ Book lesson — 수업 예약·신청류는 *lesson* 표기에 맞춘다.
+
+### LLM 출력 전 체크리스트 (필수)
+
+- 버튼/타이틀이면 Sentence case 적용 가능 언어에서 **Title Case가 남아 있지 않은지** 확인한다.
+- `수업` 의미의 영어가 `class/session/course`로 치환되지 않았는지 확인하고, UI 맥락이면 `lesson`으로 고친다.
+- `확인` 의미 버튼이 의도에 맞게 분기됐는지 확인한다:  
+  - 유저 액션 결과 확정: `Confirm`  
+  - 단순 내용 인지/닫기: `OK`
+- 위 3개 중 하나라도 위반이면, 최종 출력 전에 **반드시 재작성**한다.
 
 ### 공통
 
